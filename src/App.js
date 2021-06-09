@@ -1,6 +1,7 @@
 import React,{useReducer} from 'react'
 import {GeneradorCadena} from '../src/hooks/GeneradorCadena'
 import './App.css';
+import { MostrarCadena } from './hooks/MostrarCadena';
 import { tReducer } from './hooks/tReducer';
 
 function App() {
@@ -138,15 +139,8 @@ for(var m =0; m < cadena ; m++){
       
         {
             state.map( (todo, i) => (
-              <tr>
-              <td
-              key={ todo.cadena }
-              >
-                         { i + 1}. { todo.resultado } 
-              </td>
-             
-            </tr>
             
+            <MostrarCadena todo={todo} i={i}/>
              
             ))
         } 
